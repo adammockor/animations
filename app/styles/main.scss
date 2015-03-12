@@ -1,0 +1,139 @@
+// bower:scss
+// endbower
+
+$z-index-1: 10;
+$z-index-2: 20;
+$z-index-3: 30;
+$z-index-4: 40;
+$z-index-5: 50;
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+main {
+  height: 100%;
+}
+
+
+.anim-container {
+  position: relative;
+  height: 100%;
+  width: 800px;
+}
+
+#browser {
+  position: absolute; 
+  z-index: $z-index-1;
+}
+
+#url {
+  position: absolute;
+  top: 48px;
+  left: 100px;
+  z-index: $z-index-1 + 1;
+  opacity: 0;
+}
+
+.network-element {
+  position: absolute;
+  width: 64px;
+  z-index: $z-index-1;
+  img {
+    width: 100%;
+    display: block;
+  }
+  label {
+    padding: 10px 0 3px;
+    display: block;
+    text-align: center;
+    background-color: #fff;
+  }
+}
+
+#notebook {
+  top: 200px;
+  left: 10px;
+}
+
+#switch {
+  top: 280px;
+  left: 220px;
+}
+
+#dhcp {
+  top: 100px;
+  left: 360px;
+}
+
+#dns {
+  top: 100px;
+  left: 150px;
+}
+
+#router {
+  top: 270px;
+  left: 470px;
+}
+
+#webserver {
+  top: 100px;
+  left: 670px;
+}
+
+#network-divider {
+  position: absolute;
+  height: 100%;
+  border-left: 3px dotted #afafaf;
+  left: 501px;
+  z-index: $z-index-1 - 1;
+}
+
+.line {
+  position: absolute;
+  height: 2px;
+  background-color: #afafaf;
+  transform-origin: 50% 50%;
+}
+
+#line1 {
+  width: 157px;
+  top: 283px;
+  left: 68px;
+  transform: rotate(16deg);
+}
+
+#line2 {
+  width: 100px;
+  top: 241px;
+  left: 168px;
+  transform: rotate(50deg);
+}
+
+#line3 {
+  width: 128px;
+  top: 236px;
+  left: 256px;
+  transform: rotate(130deg);
+}
+
+#line4 {
+  width: 190px;
+  top: 309px;
+  left: 281px;
+  transform: rotate(-5deg);
+}
+
+#line5 {
+  width: 205px;
+  top: 227px;
+  left: 493px;
+  transform: rotate(-41deg);
+}
