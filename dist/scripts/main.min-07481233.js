@@ -1,1 +1,0 @@
-"use strict";var myApp=myApp||{},TimelineMax=TimelineMax||{};myApp.animate=function(){function i(){var i=new TimelineMax({delay:2});i.to("#url",1,{autoAlpha:1})}return{init:i}}(),$(document).ready(function(){myApp.animate.init()});
