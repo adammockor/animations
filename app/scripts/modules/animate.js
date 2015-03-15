@@ -289,7 +289,6 @@ myApp.animate = (function() {
       .call(sendMessage, [lines.line4.to,  lines.line4.from, "red", "request"], null, "tcpfin3+=2.5")
       .call(sendMessage, [lines.line5.to,  lines.line5.from, "red", "request"], null, "tcpfin3+=4");
   
-        tl.seek('http2');
   }
   
   return {
