@@ -5,11 +5,15 @@ block content
   .anim-container
     img#browser(src="images/browser.png")
     
-    #url http://fiit.stuba.sk
+    #url 
+       span http://
+       span fiit.stuba.sk
     
     #notebook.network-element
       img(src="images/notebook.png")
       label Your PC
+    
+    #notebook-action.action.top Hey, action!
     
     #switch.network-element
       img(src="images/switch.png")
@@ -18,14 +22,20 @@ block content
     #router.network-element
       img(src="images/router.png")
       label Router
-      
+    
+    #router-action.action.left Hey, action!
+    
     #dhcp.network-element
       img(src="images/server.png")
       label DHCP Server
+    
+    #dhcp-action.action.right Hey, action!
       
     #dns.network-element
       img(src="images/server.png")
       label DNS Server
+      
+    #dns-action.action.right Hey, action!
       
     #line1.line
     
@@ -41,4 +51,12 @@ block content
       img(src="images/server.png")
       label Web Server
       
+    #webserver-action.action.right Hey, action!
+      
     #line5.line
+      
+    #logger
+      h1#log
+        span.dollar $
+        span.text open fiit.stuba.sk
+      h3.desc
