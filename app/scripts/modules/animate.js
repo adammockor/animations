@@ -116,7 +116,7 @@ myApp.animate = (function() {
     
     tl
       .addLabel("container")
-      .from(".anim-container", 1 , {autoAlpha: 0, scale: 0} ) 
+      .to(".anim-container", 1 , {autoAlpha: 1, scale: 1} ) 
         
       .addLabel("url", "container+=1")
       .call(logger, ["open http://fiit.stuba.sk", '', 5], null, "url+=0.5") // 0/5 
@@ -243,8 +243,9 @@ myApp.animate = (function() {
       .call(sendMessage, [lines.line5.from,  lines.line5.to, "teal", "response"], null, "http2+=1")
       .call(sendMessage, [lines.line4.from,  lines.line4.to, "teal", "response"], null, "http2+=2.5")
       .call(sendMessage, [lines.line1.to,  lines.line1.from, "teal", "response"], null, "http2+=4")
+      .to("#fiit", 0.5, {autoAlpha:1}, "http2+=5")
       
-      .addLabel("http3", "http2+=6")
+      .addLabel("http3", "http2+=6.5")
       .call(action, ["#notebook-action", "I need /logo.png too.", 5], null, "http3+=0.5")
       .call(logger, ["HTTP Request", 'GET /logo.png HTTP/1.1', 5], null, "http3+=0.5") // 0/5 
       .call(sendMessage, [lines.line1.from,  lines.line1.to, "teal", "request"], null, "http3+=1")
@@ -257,10 +258,13 @@ myApp.animate = (function() {
       .call(sendMessage, [lines.line5.from,  lines.line5.to, "teal", "response"], null, "http4+=1")
       .call(sendMessage, [lines.line4.from,  lines.line4.to, "teal", "response"], null, "http4+=2.5")
       .call(sendMessage, [lines.line1.to,  lines.line1.from, "teal", "response"], null, "http4+=4")
+      .to("#logo", 0.5, {autoAlpha:1}, "http4+=5")
       
       // TCP FIN
       
-      .addLabel("tcpfin1", "http4+=6")
+      .addLabel("tcpfin1", "http4+=7.5")
+      .to("#logo", 0, {autoAlpha: 0}, "tcpfin1+=0.5")
+      .to("#fiit", 0.5, {scale: 0}, "tcpfin1+=0.5")
       .call(action, ["#notebook-action", "Let's end this connection.", 5], null, "tcpfin1+=0.5")
       .call(logger, ["TCP FIN", '', 5], null, "tcpfin1+=0.5") // 0/5 
       .call(sendMessage, [lines.line1.from,  lines.line1.to, "red", "request"], null, "tcpfin1+=1")
@@ -284,7 +288,8 @@ myApp.animate = (function() {
       .call(sendMessage, [lines.line1.from,  lines.line1.to, "red", "request"], null, "tcpfin3+=1")
       .call(sendMessage, [lines.line4.to,  lines.line4.from, "red", "request"], null, "tcpfin3+=2.5")
       .call(sendMessage, [lines.line5.to,  lines.line5.from, "red", "request"], null, "tcpfin3+=4");
-      
+  
+        tl.seek('http2');
   }
   
   return {
